@@ -5,8 +5,12 @@ import EmissionsProvider from 'providers/emissions-provider';
 import RegionsProvider from 'providers/regions-provider';
 import WorldBankDataProvider from 'providers/wb-country-data-provider';
 import ButtonGroup from 'components/button-group';
-import MultiDropdown from 'components/multi-dropdown';
-import { Chart, Multiselect, Dropdown } from 'cw-components';
+import {
+  Chart,
+  Multiselect,
+  Dropdown,
+  MultiLevelDropdown
+} from 'cw-components';
 import ReactTooltip from 'react-tooltip';
 import ModalMetadata from 'components/modal-metadata';
 import { TabletPortraitOnly, TabletLandscape } from 'components/responsive';
@@ -120,7 +124,7 @@ class GhgEmissions extends PureComponent {
             onValueChange={selected => handleChange('regions', selected)}
             hideResetButton
           />
-          <MultiDropdown
+          <MultiLevelDropdown
             label="Sectors / Subsectors"
             theme={{ wrapper: styles.dropdown }}
             options={options.sectors}
